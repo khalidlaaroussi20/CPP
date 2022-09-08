@@ -6,7 +6,7 @@
 /*   By: klaarous <klaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 16:14:29 by klaarous          #+#    #+#             */
-/*   Updated: 2022/09/08 16:57:40 by klaarous         ###   ########.fr       */
+/*   Updated: 2022/09/08 17:53:56 by klaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void Harl::complain( std::string level )
 {
 	void (Harl::*complaints[]) ( void ) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string levels[] = {DEBUG, INFO, WARNING, ERROR};
-	for (size_t i = 0; i < levels->length() ; i++)
+	for (size_t i = 0; i < NUMBER_HARL ; i++)
 	{
 		if (level == levels[i])
 			(this ->*complaints[i])();

@@ -1,5 +1,5 @@
 SRC = *.cpp
-NAME = Harl
+NAME = harlFilter
 RM = rm -f
 CFLAGS =  -Wall -Wextra -Werror
 

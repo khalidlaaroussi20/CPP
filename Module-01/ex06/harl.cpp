@@ -6,7 +6,7 @@
 /*   By: klaarous <klaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 16:14:29 by klaarous          #+#    #+#             */
-/*   Updated: 2022/09/08 16:57:40 by klaarous         ###   ########.fr       */
+/*   Updated: 2022/09/08 18:06:06 by klaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,34 @@ void Harl::error( void )
 void Harl::complain( std::string level )
 {
 	void (Harl::*complaints[]) ( void ) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	std::string levels[] = {DEBUG, INFO, WARNING, ERROR};
-	for (size_t i = 0; i < levels->length() ; i++)
+	std::string levels[NUMBER_HARL] = {DEBUG, INFO, WARNING, ERROR};
+	int start_idx = 0;
+	for (; start_idx < NUMBER_HARL ; start_idx++)
 	{
-		if (level == levels[i])
-			(this ->*complaints[i])();
+		if (level == levels[start_idx])
+			break;
+	}
+	
+	switch (start_idx)
+	{
+		case 0:
+			std::cout << "[ " << levels[0] << " ]" << std::endl; 
+			(this ->*complaints[0])();
+			std::cout << std::endl;
+		case 1:
+			std::cout << "[ " << levels[1] << " ]" << std::endl; 
+			(this ->*complaints[1])();
+			std::cout << std::endl;
+		case 2:
+			std::cout << "[ " << levels[2] << " ]" << std::endl; 
+			(this ->*complaints[2])();
+			std::cout << std::endl;
+		case 3:
+			std::cout << "[ " << levels[3] << " ]" << std::endl; 
+			(this ->*complaints[3])();
+			std::cout << std::endl;
+		default:
+			return ;
 	}
 }
 

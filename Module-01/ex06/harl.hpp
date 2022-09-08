@@ -6,7 +6,7 @@
 /*   By: klaarous <klaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 18:46:04 by klaarous          #+#    #+#             */
-/*   Updated: 2022/09/08 16:48:41 by klaarous         ###   ########.fr       */
+/*   Updated: 2022/09/08 17:50:31 by klaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 #define INFO "INFO"
 #define WARNING "WARNING"
 #define ERROR "ERROR"
+
+#define NUMBER_HARL 4
 
 class Harl
 {
