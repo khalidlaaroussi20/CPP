@@ -1,38 +1,41 @@
-
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaarous <klaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 16:54:21 by klaarous          #+#    #+#             */
-/*   Updated: 2022/09/05 17:40:03 by klaarous         ###   ########.fr       */
+/*   Created: 2022/09/12 13:58:22 by klaarous          #+#    #+#             */
+/*   Updated: 2022/09/12 15:38:44 by klaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PHONEBOOK_HPP
-#define  PHONEBOOK_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-#define MAX_SIZE  8
 
 #include <iostream>
 #include <string>
-#include "contact.hpp"
+
+#include "Animal.hpp"
+#include "Brain.hpp"
 
 
-class PhoneBook
+class Cat : public Animal
 {
-	public:
-		int	size;
-		int	curr_idx;
-		Contact phonesBook[MAX_SIZE];
-		PhoneBook();
-		void	add(Contact contact);
-		bool	isExist(int id);
-		Contact search(int id);
-		void	showPhonesBook();
+	private:
+		Brain* brain;
+	public :
+		Cat();
+		Cat (const Cat &other);
+		
+		// Operators 
+		Cat& operator= (const Cat& other);
+
+		//function
+		void	makeSound() const;
+		
+		~Cat();
 };
 
 #endif

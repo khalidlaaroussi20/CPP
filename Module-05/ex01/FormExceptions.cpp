@@ -1,38 +1,23 @@
-
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   FormExceptions.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaarous <klaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 16:54:21 by klaarous          #+#    #+#             */
-/*   Updated: 2022/09/05 17:40:03 by klaarous         ###   ########.fr       */
+/*   Created: 2022/09/15 11:46:06 by klaarous          #+#    #+#             */
+/*   Updated: 2022/09/15 14:18:10 by klaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PHONEBOOK_HPP
-#define  PHONEBOOK_HPP
+#include "Form.hpp"
 
-#define MAX_SIZE  8
-
-#include <iostream>
-#include <string>
-#include "contact.hpp"
-
-
-class PhoneBook
+const char* Form::GradeTooHighException::what() const throw ()
 {
-	public:
-		int	size;
-		int	curr_idx;
-		Contact phonesBook[MAX_SIZE];
-		PhoneBook();
-		void	add(Contact contact);
-		bool	isExist(int id);
-		Contact search(int id);
-		void	showPhonesBook();
-};
+	return "Grade Too High !!";
+}
 
-#endif
+const char* Form::GradeTooLowException::what() const throw ()
+{
+	return "Grade Too Low !!";
+}

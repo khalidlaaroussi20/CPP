@@ -6,7 +6,7 @@
 /*   By: klaarous <klaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 17:39:51 by klaarous          #+#    #+#             */
-/*   Updated: 2022/09/06 10:28:22 by klaarous         ###   ########.fr       */
+/*   Updated: 2022/09/12 12:43:19 by klaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ bool	PhoneBook::isExist(int id)
 	}
 	return (true);
 }
+
 Contact PhoneBook::search(int id)
 {
 	return (this ->phonesBook[id]);

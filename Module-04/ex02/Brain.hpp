@@ -1,38 +1,35 @@
-
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaarous <klaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 16:54:21 by klaarous          #+#    #+#             */
-/*   Updated: 2022/09/05 17:40:03 by klaarous         ###   ########.fr       */
+/*   Created: 2022/09/12 15:29:10 by klaarous          #+#    #+#             */
+/*   Updated: 2022/09/12 15:35:26 by klaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PHONEBOOK_HPP
-#define  PHONEBOOK_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#define MAX_SIZE  8
+#define SIZE_IDEAS 100
+
 
 #include <iostream>
 #include <string>
-#include "contact.hpp"
 
-
-class PhoneBook
+class Brain
 {
-	public:
-		int	size;
-		int	curr_idx;
-		Contact phonesBook[MAX_SIZE];
-		PhoneBook();
-		void	add(Contact contact);
-		bool	isExist(int id);
-		Contact search(int id);
-		void	showPhonesBook();
+	public :
+		std::string ideas[SIZE_IDEAS];
+		Brain();
+		Brain (const Brain &other);
+		
+		// Operators 
+		Brain& operator= (const Brain& other);
+		~Brain();
 };
+
 
 #endif

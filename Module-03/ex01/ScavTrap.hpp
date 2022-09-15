@@ -1,38 +1,33 @@
-
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaarous <klaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 16:54:21 by klaarous          #+#    #+#             */
-/*   Updated: 2022/09/05 17:40:03 by klaarous         ###   ########.fr       */
+/*   Created: 2022/09/11 15:20:51 by klaarous          #+#    #+#             */
+/*   Updated: 2022/09/11 15:48:41 by klaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PHONEBOOK_HPP
-#define  PHONEBOOK_HPP
-
-#define MAX_SIZE  8
-
-#include <iostream>
-#include <string>
-#include "contact.hpp"
+#include "ClapTrap.hpp"
 
 
-class PhoneBook
+# define DEFAULT_SCAV_HIT 100
+# define DEFAULT_SCAV_ENERGY 50
+# define DEFAULT_SCAV_ATTACK_DAMAGE 10
+
+class ScavTrap : public ClapTrap 
 {
-	public:
-		int	size;
-		int	curr_idx;
-		Contact phonesBook[MAX_SIZE];
-		PhoneBook();
-		void	add(Contact contact);
-		bool	isExist(int id);
-		Contact search(int id);
-		void	showPhonesBook();
-};
+	private :
+		ScavTrap();
+	public :
+		ScavTrap(std::string 	name);
+		ScavTrap (const ScavTrap &other);
+		
+		// Operators 
+		ScavTrap&	operator= (const ScavTrap& other);
+		void		guardGate();
 
-#endif
+		~ScavTrap();
+};

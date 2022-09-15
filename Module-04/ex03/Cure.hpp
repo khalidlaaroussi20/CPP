@@ -1,38 +1,34 @@
-
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaarous <klaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 16:54:21 by klaarous          #+#    #+#             */
-/*   Updated: 2022/09/05 17:40:03 by klaarous         ###   ########.fr       */
+/*   Created: 2022/09/13 14:55:56 by klaarous          #+#    #+#             */
+/*   Updated: 2022/09/13 16:04:21 by klaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PHONEBOOK_HPP
-#define  PHONEBOOK_HPP
+#ifndef CURE_H
+#define CURE_H
 
-#define MAX_SIZE  8
+#include "AMateria.hpp"
 
-#include <iostream>
-#include <string>
-#include "contact.hpp"
-
-
-class PhoneBook
+class Cure : public AMateria
 {
 	public:
-		int	size;
-		int	curr_idx;
-		Contact phonesBook[MAX_SIZE];
-		PhoneBook();
-		void	add(Contact contact);
-		bool	isExist(int id);
-		Contact search(int id);
-		void	showPhonesBook();
+		Cure();
+		Cure (const Cure &other);
+		
+		// Operators 
+		Cure& operator= (const Cure& other);
+		
+		std::string const & getType() const; //Returns the materia type
+		AMateria*			clone() const;
+		void 				use(ICharacter& target);
+		
+		~Cure();
 };
 
 #endif

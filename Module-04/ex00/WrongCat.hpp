@@ -1,38 +1,38 @@
-
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaarous <klaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 16:54:21 by klaarous          #+#    #+#             */
-/*   Updated: 2022/09/05 17:40:03 by klaarous         ###   ########.fr       */
+/*   Created: 2022/09/12 13:58:22 by klaarous          #+#    #+#             */
+/*   Updated: 2022/09/12 15:01:03 by klaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PHONEBOOK_HPP
-#define  PHONEBOOK_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-#define MAX_SIZE  8
 
 #include <iostream>
 #include <string>
-#include "contact.hpp"
+
+#include "WrongAnimal.hpp"
 
 
-class PhoneBook
+class WrongCat : public WrongAnimal
 {
-	public:
-		int	size;
-		int	curr_idx;
-		Contact phonesBook[MAX_SIZE];
-		PhoneBook();
-		void	add(Contact contact);
-		bool	isExist(int id);
-		Contact search(int id);
-		void	showPhonesBook();
+	public :
+		WrongCat();
+		WrongCat (const WrongCat &other);
+		
+		// Operators 
+		WrongCat& operator= (const WrongCat& other);
+
+		//function
+		void	makeSound() const;
+		
+		~WrongCat();
 };
 
 #endif

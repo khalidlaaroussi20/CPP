@@ -1,38 +1,36 @@
-
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaarous <klaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 16:54:21 by klaarous          #+#    #+#             */
-/*   Updated: 2022/09/05 17:40:03 by klaarous         ###   ########.fr       */
+/*   Created: 2022/09/10 11:00:34 by klaarous          #+#    #+#             */
+/*   Updated: 2022/09/10 14:59:07 by klaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PHONEBOOK_HPP
-#define  PHONEBOOK_HPP
+#ifndef POINT_HPP
+# define POINT_HPP
 
-#define MAX_SIZE  8
+#include "Fixed.hpp"
 
-#include <iostream>
-#include <string>
-#include "contact.hpp"
-
-
-class PhoneBook
+class Point
 {
-	public:
-		int	size;
-		int	curr_idx;
-		Contact phonesBook[MAX_SIZE];
-		PhoneBook();
-		void	add(Contact contact);
-		bool	isExist(int id);
-		Contact search(int id);
-		void	showPhonesBook();
+	private:
+		const Fixed x;
+		const Fixed y;
+	public :
+		Point();
+		Point(const float a, const float b);
+		Point(const Point& other);
+		Point& operator= (const Point& other);
+		const Fixed getX( void ) const;
+		const Fixed getY( void ) const;
+		~Point();
+		
 };
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif
