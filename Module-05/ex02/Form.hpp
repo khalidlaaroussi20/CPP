@@ -6,18 +6,20 @@
 /*   By: klaarous <klaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:55:10 by klaarous          #+#    #+#             */
-/*   Updated: 2022/09/15 15:57:11 by klaarous         ###   ########.fr       */
+/*   Updated: 2022/09/16 11:20:00 by klaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Form_HPP
-#define Form_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 
 #define  MAX_GRADE 1
 # define MIN_GRADE 150
 
 #include <iostream>
 #include <string>
+#include <fstream>
+
 
 #include "Bureaucrat.hpp"
 
@@ -57,10 +59,13 @@ class Form
 		int					getExecuteGrade() const;
 
 		//methods
-		void			beSigned(Bureaucrat const &bureaucrat);
+		void			beSigned(Bureaucrat const & bureaucrat);
+		bool			isValidToExecute(Bureaucrat const & executor) const;
 		virtual void	execute(Bureaucrat const & executor) const = 0;
+		virtual void	printForm() const = 0;
 
-		~Form();
+
+		virtual ~Form();
 };
 std::ostream & operator << (std::ostream &out, const Form &f);
 

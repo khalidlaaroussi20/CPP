@@ -6,15 +6,15 @@
 /*   By: klaarous <klaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 16:14:29 by klaarous          #+#    #+#             */
-/*   Updated: 2022/09/08 18:06:06 by klaarous         ###   ########.fr       */
+/*   Updated: 2022/09/23 14:43:04 by klaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "harl.hpp"
+#include "Harl.hpp"
 
 Harl::Harl()
 {
-	std::cout << "Harl Constructure !!" << std::endl;
+	//std::cout << "Harl Constructure !!" << std::endl;
 }
 
 void Harl::debug( void )
@@ -66,13 +66,15 @@ void Harl::complain( std::string level )
 			std::cout << "[ " << levels[3] << " ]" << std::endl; 
 			(this ->*complaints[3])();
 			std::cout << std::endl;
+			break;
 		default:
-			return ;
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			break;
 	}
 }
 
 Harl::~Harl()
 {
-	std::cout << "Harl Destructure !!" << std::endl;
+	//std::cout << "Harl Destructure !!" << std::endl;
 }
 

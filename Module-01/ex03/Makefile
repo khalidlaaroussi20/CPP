@@ -1,7 +1,7 @@
-SRC = *.cpp
+SRC = Weapon.cpp HumanB.cpp HumanA.cpp main.cpp
 NAME = Weapon
 RM = rm -f
-CFLAGS =  -Wall -Wextra -Werror
+CFLAGS =  -Wall -Wextra -Werror -std=c++98
 
 
 all : $(NAME)

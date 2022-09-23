@@ -1,7 +1,7 @@
-SRC = *.cpp
+SRC = Harl.cpp main.cpp
 NAME = Harl
 RM = rm -f
-CFLAGS =  -Wall -Wextra -Werror
+CFLAGS =  -Wall -Wextra -Werror -std=c++98
 
 
 all : $(NAME)

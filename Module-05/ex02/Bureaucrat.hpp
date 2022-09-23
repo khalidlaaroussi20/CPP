@@ -6,7 +6,7 @@
 /*   By: klaarous <klaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 10:59:20 by klaarous          #+#    #+#             */
-/*   Updated: 2022/09/15 15:11:33 by klaarous         ###   ########.fr       */
+/*   Updated: 2022/09/16 11:02:46 by klaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ class Bureaucrat
 		void	incrementGrade();
 		void	decrementtGrade();
 		void	signForm(Form &form);
+		void	executeForm(Form const & form);
 		~Bureaucrat();
 };
 

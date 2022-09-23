@@ -6,16 +6,16 @@
 /*   By: klaarous <klaarous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 16:58:10 by klaarous          #+#    #+#             */
-/*   Updated: 2022/09/08 17:00:08 by klaarous         ###   ########.fr       */
+/*   Updated: 2022/09/23 14:35:53 by klaarous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "harl.hpp"
+#include "Harl.hpp"
 
 
 int main()
 {
 	Harl harl;
-	harl.complain(INFO);
+	harl.complain("aaa");
 	return (0);
 }

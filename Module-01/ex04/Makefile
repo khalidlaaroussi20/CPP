@@ -1,4 +1,4 @@
-SRC = *.cpp
+SRC = main.cpp
 NAME = a.out
 RM = rm -f
 CFLAGS =  -Wall -Wextra -Werror -std=c++98

@@ -1,5 +1,5 @@
 SRC = *.cpp
-NAME = Form
+NAME = Forms
 RM = rm -f
 CFLAGS =  -Wall -Wextra -Werror
 
